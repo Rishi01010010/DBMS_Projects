@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>booking Details</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #333333;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #ffffff;
+        }
+
+        .header-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .form {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group {
+            margin-right: 20px;
+        }
+
+        .form-group label {
+            color: #ffffff;
+            margin-right: 10px;
+        }
+
+        .form-group input {
+            padding: 8px;
+            border: 1px solid #666666;
+            border-radius: 4px;
+            background-color: #444444;
+            color: #ffffff;
+        }
+
+        .form-buttons {
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .add-button {
+            padding: 8px 16px;
+            background-color: #008CBA;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .add-button:hover {
+            background-color: #007b9e;
+        }
+
+        .table-container {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            background-color: #444444;
+        }
+
+        table th,
+        table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #666666;
+        }
+
+        table th {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        table tr:hover {
+            background-color: #555555;
+        }
+
+        a {
+            color: #ff0000;
+            text-decoration: none;
+        }
+
+        .view-button {
+            padding: 8px 16px;
+            background-color: #f39c12;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .view-button:hover {
+            background-color: #e67e22;
+        }
+
+        #deletebookingForm{
+            background-color: #626262;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Booking Details</h1>
+            <div class="header-buttons">
+                <button class="add-button" onclick="window.location.href='/add-booking.html'">Add booking</button>
+                <button class="add-button" onclick="window.location.href='/add-train.html'">Add train</button>
+                <button class="add-button" onclick="window.location.href='/add-passenger.html'">Add passenger</button>
+                <button class="add-button" onclick="window.location.href='/add-route.html'">Add route</button>
+                <button class="view-button" id="viewbookings">View bookings</button>
+                <button class="view-button" id="viewtrains">View trains</button>
+                <button class="view-button" id="viewpassengers">View passengers</button>
+                <button class="view-button" id="viewroutes">View routes</button>
+            </div>
+            <form id="deletebookingForm" class="form">
+                <div class="form-group">
+                    <label for="deletebookingId">booking ID:</label>
+                    <input type="text" id="deletebookingId" name="deletebookingId" required>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn">Delete booking</button>
+                </div>
+            </form>
+        </header>
+        <div id="bookingsTable" class="table-container"></div>
+        <div id="trainsTable" class="table-container" style="display:none;"></div>
+        <div id="passengersTable" class="table-container" style="display:none;"></div>
+        <div id="routesTable" class="table-container" style="display:none;"></div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
